@@ -2,13 +2,14 @@
 {
     public class Jogo
     {
+        private bool Turno;
         private string[,] Tabuleiro = new string[3, 3];
         private int Rodada = 0;
 
         private string JogadorX;
         private string JogadorO;
 
-        // private bool Turno = true;
+        
         public Jogo()
         {
             JogadorX = String.Empty;
@@ -20,12 +21,13 @@
         private void Iniciar()
         {
             Console.WriteLine("Jogo da Velha\n");
+            Preencher();
             Desenhar();
         }
 
         private void Desenhar()
         {
-            //Preencher();
+
 
             Console.Clear();
 
@@ -35,9 +37,10 @@
             Console.WriteLine("-------------");
             Console.WriteLine($"{Tabuleiro[1, 0]} | {Tabuleiro[1, 1]} | {Tabuleiro[1, 2]}");
             Console.WriteLine("-------------");
-            Console.WriteLine($"{Tabuleiro[0, 0]} | {Tabuleiro[0, 1]} | {Tabuleiro[0, 2]}");
+            Console.WriteLine($"{Tabuleiro[0, 0]} | {Tabuleiro[0, 1]} | {Tabuleiro[0, 2]}\n");
 
             Jogada();
+            
         }
 
         private void Preencher()
@@ -70,7 +73,7 @@
 
         private bool Vencedor()
         {
-            return true;
+            return false;
         }
 
         private void Jogada()
@@ -78,52 +81,89 @@
             bool Limite = Rodada > 0;
             bool Fim = Vencedor() || Limite;
 
-            while(Fim)
+            while (Fim)
             {
                 Console.WriteLine("Escolha a posição que deseja jogar:");
                 Console.WriteLine("> ");
-                bool ValidarEntrada = int.TryParse(Console.ReadLine(), out int EscolhaDoJogador;
+                bool ValidarEntrada = int.TryParse(Console.ReadLine(), out int EscolhaDoJogador);
 
-                if(ValidarEntrada)
+                if (ValidarEntrada)
                 {
                     switch (EscolhaDoJogador)
                     {
-                        case 0:
-                            break;
-
-                        case 1:
-                            break;
-
-                        case 2:
-                            break;
-
-                        case 3:
-                            break;
-
-                        case 4:
-                            break;
-
-                        case 5:
-                            break;
-
-                        case 6:
-                            break;
 
                         case 7:
+                            Tabuleiro[2, 0] = Turno ? "X" : "O";
+                            Rodada--;
+                            Desenhar();
+                            Turno = !Turno;
                             break;
 
                         case 8:
+                            Tabuleiro[2, 1] = Turno ? "X" : "O";
+                            Rodada--;
+                            Desenhar();
+                            Turno = !Turno;
                             break;
 
                         case 9:
+                            Tabuleiro[2, 2] = Turno ? "X" : "O";
+                            Rodada--;
+                            Desenhar();
+                            Turno = !Turno;
+                            break;
+
+                        case 4:
+                            Tabuleiro[1, 0] = Turno ? "X" : "O";
+                            Rodada--;
+                            Desenhar();
+                            Turno = !Turno;
+                            break;
+
+                        case 5:
+                            Tabuleiro[1, 1] = Turno ? "X" : "O";
+                            Rodada--;
+                            Desenhar();
+                            Turno = !Turno;
+                            break;
+
+                        case 6:
+                            Tabuleiro[1, 2] = Turno ? "X" : "O";
+                            Rodada--;
+                            Desenhar();
+                            Turno = !Turno;
+                            break;
+
+                        case 1:
+                            Tabuleiro[0, 0] = Turno ? "X" : "O";
+                            Rodada--;
+                            Desenhar();
+                            Turno = !Turno;
+                            break;
+
+                        case 2:
+                            Tabuleiro[0, 1] = Turno ? "X" : "O";
+                            Rodada--;
+                            Desenhar();
+                            Turno = !Turno;
+                            break;
+
+                        case 3:
+                            Tabuleiro[0, 2] = Turno ? "X" : "O";
+                            Rodada--;
+                            Desenhar();
+                            Turno = !Turno;
                             break;
 
                         default:
+                            Console.WriteLine("Valor inválido");
                             break;
 
                     }
                 }
-                
+
             }
+
         }
     }
+}
