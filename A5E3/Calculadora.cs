@@ -3,44 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Math;
+
 
 namespace A5E3
 {
-    abstract class Calculadora
+    
+    public class Calculadora
     {
-      
-        public virtual void Menu()
-        {
-            Console.WriteLine("Insira um número:");
-            int num1 = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Insira outro número:");
-            int num2 = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Escolha o número da operação que deseja realizar:\n1 - Soma\n2 - Subtração\n3 - Divisão\n4 - Multiplicação");
-            int op = int.Parse(Console.ReadLine());
-        }
         
-        public virtual void Soma()
+        public void Soma(int num1, int num2)
         {
-            if (int op);
+            int ValorTotal = num1 + num2;
         }
 
-        public void Sub()
-        {
-            Console.WriteLine();
-        }
+        //public virtual int Sub()
+        //{
+        //    return num1 - num2;
+        //}
 
-        public void Div()
-        {
-            Console.WriteLine();
-        }
+        //public virtual int Div()
+        //{
+        //    return num1 / num2;
+        //}
 
-        public void Mult()
-        {
-            Console.WriteLine();
-        }
+        //public virtual int Mult()
+        //{
+        //    return num1 * num2;
+        //}
 
+     
     }
 
 
